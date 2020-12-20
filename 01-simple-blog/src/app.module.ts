@@ -6,9 +6,11 @@ import { AuthModule } from './auth/auth.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ArticleModule } from './article/article.module';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
-  imports: [SharedModule, UserModule, AuthModule],
+  imports: [SharedModule, UserModule, AuthModule, ArticleModule, CommentModule],
   controllers: [AppController],
   providers: [AppService],
 })
