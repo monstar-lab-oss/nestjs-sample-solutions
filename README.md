@@ -10,3 +10,5 @@ Here we implement solutions to defined problem statements. The solutions are bas
 ## Sample Solutions
 
 - [1. Simple Blog](./01-simple-blog) [WIP]
+- [2. AWS Lambda deployment](./02-aws-lambda-deployment) [WIP]
+- [3. AWS ECS Fargate deployment](./03-aws-ecs-fargate-deployment) [WIP]
