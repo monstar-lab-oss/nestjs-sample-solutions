@@ -1,0 +1,30 @@
+service: nestjs-starter-rest-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - e2e/**
+    - nodemon.json
+    - README.md
+
+functions:
+  lambda-main:
+    handler: dist/lambda-main.handler
+    events:
+      - http:
+          cors: true
+          path: '/'
+          method: any
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any
