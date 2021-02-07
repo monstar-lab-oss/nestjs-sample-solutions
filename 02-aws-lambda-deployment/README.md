@@ -56,7 +56,15 @@ $ npm run start:prod
 $ npm run sls-offline
 ```
 
+## Deployment
+
+```sh
+# deploy to DEV environment
+npm run deploy:dev
+```
+
 ## External Links
 
 <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo.svg" width="150" alt="Nest Logo" /></a>
 
+<a href="https://www.serverless.com/" target="blank"><img src="https://user-images.githubusercontent.com/2752551/30405068-a7733b34-989e-11e7-8f66-7badaf1373ed.png" width="150" alt="Nest Logo" /></a>
