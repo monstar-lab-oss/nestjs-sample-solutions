@@ -18,7 +18,7 @@ package:
 
 functions:
   lambda-main:
-    handler: dist/lambda-main.handler
+    handler: dist/src/lambda-main.handler
     events:
       - http:
           cors: true

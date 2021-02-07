@@ -10,8 +10,8 @@ import { RequestIdMiddleware } from './shared/middlewares/request-id/request-id.
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('api/v1');
 
+  app.setGlobalPrefix('api/v1');
   app.useLogger(new AppLogger(app.get(Logger)));
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
   app.use(RequestIdMiddleware);
