@@ -73,11 +73,11 @@ npm run deploy:dev
 
 ## Alternative Deployment via Lambda Container Image
 
-Usually when we use the serverless deploy command, the framework runs (serverless package)[https://www.serverless.com/framework/docs/providers/aws/guide/packaging/] in the background first, and then (deploys)[https://www.serverless.com/framework/docs/providers/aws/cli-reference/deploy/] the generated package(Lamda packages are zip files) via CloudFormation.
+Usually when we use the serverless deploy command, the framework runs [serverless package](https://www.serverless.com/framework/docs/providers/aws/guide/packaging/) in the background first, and then [deploys](https://www.serverless.com/framework/docs/providers/aws/cli-reference/deploy/) the generated package(Lamda packages are zip files) via CloudFormation.
 
 But as of Dec 2020, AWS Lambda allows us to package it with a Docker container image that can be up to 10 GB in size, instead of traditional zip files. That means we can have a Dockerfile with all the dependencies, push it to ECR, and just point Lambda to the AWS ECR image.
 
-You can avail docker support with the help of serverless framework also instead of the manual process. Read (here)[https://www.serverless.com/blog/container-support-for-lambda] for more detailed steps where you start off by changing in the serverless.yml file.
+You can avail docker support with the help of serverless framework also instead of creating it manually process. Read [here](https://www.serverless.com/blog/container-support-for-lambda) for more detailed steps where you start off by changing in the serverless.yml file.
 
 ## External Link
 
