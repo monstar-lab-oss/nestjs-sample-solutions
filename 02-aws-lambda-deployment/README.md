@@ -35,7 +35,6 @@ To run the app we need this pre-requisite:
 
 ## Running the app in local
 
-
 Commands:
 
 ```bash
@@ -55,16 +54,11 @@ $ npm run start:prod
 $ npm run sls-offline
 ```
 
-<<<<<<< HEAD
 ## Deployment via serverless
 
-We need the various required environment variables to exist in order to run the app. 
+We need the various required environment variables to exist in order to run the app.
 
 We currently hard-code them in the `serverless.yml` file. Our recommended way is to use `AWS SSM - Parameter Store` and point to the SSM variable path in the `serverless.yml` file.
-
-=======
-## Deployment via CloudFormation
->>>>>>> e2c7c11... feat: update readme with lambda container image deployment info
 
 ```sh
 # deploy to DEV environment
