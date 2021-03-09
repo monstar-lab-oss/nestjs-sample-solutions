@@ -22,14 +22,15 @@ const bootstrapServer = async (): Promise<Server> => {
     logger: false,
   })
 
+  // eventContext from aws-serverless-express library. Needed for Lambda.
   app.use(eventContext())
   
+  /** Bootstrap middleware, logger, validators, etc. */
   app.setGlobalPrefix('api/v1');
   app.useLogger(new AppLogger(app.get(Logger)));
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
   app.use(RequestIdMiddleware);
   app.enableCors();
-  app.enableCors()
 
   await app.init()
   return createServer(expressApp)
