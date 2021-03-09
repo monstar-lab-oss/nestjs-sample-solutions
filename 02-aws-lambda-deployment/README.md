@@ -23,19 +23,18 @@ $ npm install
 npm install -g serverless
 ```
 
-
-
 ## Running the app
 
 We need the various required environment variables to exist in order to run the app.
 
 Create a `.env` file from the template `.env.template` file. For more details, please refer to the starter-kit's README file.
 
-## Running the app in local
-
-To run the server without Docker we need this pre-requisite:
+To run the app we need this pre-requisite:
 
 - MySQL server running
+
+## Running the app in local
+
 
 Commands:
 
@@ -56,7 +55,12 @@ $ npm run start:prod
 $ npm run sls-offline
 ```
 
-## Deployment
+## Deployment via serverless
+
+We need the various required environment variables to exist in order to run the app. 
+
+We currently hard-code them in the `serverless.yml` file. Our recommended way is to use `AWS SSM - Parameter Store` and point to the SSM variable path in the `serverless.yml` file.
+
 
 ```sh
 # deploy to DEV environment
