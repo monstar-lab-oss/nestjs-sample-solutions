@@ -1,6 +1,6 @@
 ## NestJS Starter-Kit - AWS Lambda Deployment
 
-## NOTE : 
+## NOTE :
 
 This project was cloned from the [nestjs-starter-rest-api](https://github.com/monstar-lab-oss/nestjs-starter-rest-api) repository.
 
@@ -35,7 +35,6 @@ To run the app we need this pre-requisite:
 
 ## Running the app in local
 
-
 Commands:
 
 ```bash
@@ -57,17 +56,24 @@ $ npm run sls-offline
 
 ## Deployment via serverless
 
-We need the various required environment variables to exist in order to run the app. 
+We need the various required environment variables to exist in order to run the app.
 
 We currently hard-code them in the `serverless.yml` file. Our recommended way is to use `AWS SSM - Parameter Store` and point to the SSM variable path in the `serverless.yml` file.
-
 
 ```sh
 # deploy to DEV environment
 npm run deploy:dev
 ```
 
-## External Links
+## Alternative Deployment via Lambda Container Image
+
+Usually when we use the serverless deploy command, the framework runs [serverless package](https://www.serverless.com/framework/docs/providers/aws/guide/packaging/) in the background first, and then [deploys](https://www.serverless.com/framework/docs/providers/aws/cli-reference/deploy/) the generated package(Lamda packages are zip files) via CloudFormation.
+
+But as of Dec 2020, AWS Lambda allows us to package it with a Docker container image that can be up to 10 GB in size, instead of traditional zip files. That means we can have a Dockerfile with all the dependencies, push it to ECR, and just point Lambda to the AWS ECR image.
+
+You can avail docker support with the help of serverless framework also instead of creating it manually process. Read [here](https://www.serverless.com/blog/container-support-for-lambda) for more detailed steps where you start off by changing in the serverless.yml file.
+
+## External Link
 
 <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo.svg" width="150" alt="Nest Logo" /></a>
 
